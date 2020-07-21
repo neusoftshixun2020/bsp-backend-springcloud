@@ -1,0 +1,22 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 39.107.106.193:8848
+  datasource:
+    druid:
+      username: neusoft
+      password: "12345"
+      url: jdbc:mysql://49.232.199.44:3306/bsp_database?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mappers/*/*Mapper.xml
+  type-aliases-package: com.neusoft.order8085.*.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

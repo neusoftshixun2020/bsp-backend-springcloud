@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.basicinformation8084.mvo.mapper.ManMapper">
+    <insert id="insert"  parameterType="Manufacturer">
+        insert into man_manufacturer values(null, #{name_en}, #{name_cn}, #{gmc_report_type}, #{gmc_report_url},
+            #{description}, #{created_by}, #{creation_date}, #{last_update_by}, #{last_update_date}, #{call_cnt}, #{remark}, #{sts_cd}, #{user_id})
+    </insert>
+
+    <update id="update" parameterType="Manufacturer">
+        update man_manufacturer set name_en=#{name_en}, name_cn=#{name_cn}, gmc_report_type=#{gmc_report_type},
+            gmc_report_url=#{gmc_report_url}, description=#{description}, created_by=#{created_by}, creation_date=#{creation_date}, last_update_by=#{last_update_by}, last_update_date=#{last_update_date}, call_cnt=#{call_cnt}, remark=#{remark},
+            sts_cd=#{sts_cd}, user_id=#{user_id} where man_id=#{man_id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.String">
+        delete from man_manufacturer where man_id=#{man_id}
+    </delete>
+
+    <select id="getAll" resultMap="_man">
+        select * from man_manufacturer
+    </select>
+
+    <select id="getById" parameterType="java.lang.String">
+        select * from man_manufacturer where man_id=#{man_id}
+    </select>
+
+    <select id="getAllByFilter" parameterType="java.util.Map" resultMap="_man">
+        select * from man_manufacturer
+        <where>
+            <if test="MAN_ID != null">MAN_ID = #{man_id}</if>
+            <if test="name_en != null">name_en = #{name_en}</if>
+            <if test="name_cn != null">name_cn = #{name_cn}</if>
+            <if test="gmc_report_type != null">gmc_report_type = #{gmc_report_type}</if>
+            <if test="gmc_report_url != null">gmc_report_url = #{gmc_report_url}</if>
+            <if test="description != null">description = #{description}</if>
+            <if test="created_by != null">created_by = #{created_by}</if>
+            <if test="creation_date != null">creation_date = #{creation_date}</if>
+            <if test="last_update_by != null">last_update_by = #{last_update_by}</if>
+            <if test="last_update_date != null">last_update_date = #{last_update_date}</if>
+            <if test="call_cnt != null">call_cnt = #{call_cnt}</if>
+            <if test="remark != null">remark = #{remark}</if>
+            <if test="sts_cd != null">sts_cd = #{sts_cd}</if>
+            <if test="user_id != null">user_id = #{user_id}</if>
+        </where>
+    </select>
+
+    <resultMap id="_man" type="Manufacturer">
+        <id column="MAN_ID" property="man_id" />
+       <result column="NAME_EN" property="name_en" />
+       <result column="NAME_CN" property="name_cn" />
+       <result column="GMC_REPORT_TYPE" property="gmc_report_type" />
+       <result column="GMC_REPORT_URL" property="gmc_report_url" />
+       <result column="DESCRIPTION" property="description" />
+       <result column="CREATED_BY" property="created_by" />
+       <result column="CREATION_DATE" property="creation_date" />
+       <result column="LAST_UPDATE_BY" property="last_update_by" />
+       <result column="LAST_UPDATE_DATE" property="last_update_date" />
+       <result column="CALL_CNT" property="call_cnt" />
+       <result column="REMARK" property="remark" />
+       <result column="STS_CD" property="sts_cd" />
+       <result column="USER_ID" property="user_id" />
+    </resultMap>
+
+
+</mapper>

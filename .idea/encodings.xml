@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/basic-information-8084/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/exception-handler-8081/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/image-manager-8082/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order-8085/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-permission-8083/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wallet-8086/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zuul-8087/src/main/java" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,19 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: zuul
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 39.107.106.193:8848
+
+zuul:
+  routes:
+    basicInformation:
+    exceptionHandler:
+    imageManager:
+    order:
+    userPermission:
+    wallet:

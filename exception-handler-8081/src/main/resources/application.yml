@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+
+spring:
+  application:
+      name: exceptionHandler
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 39.107.106.193:8848
+
+
+
+
