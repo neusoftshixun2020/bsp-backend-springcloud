@@ -8,12 +8,22 @@ spring:
     nacos:
       discovery:
         server-addr: 39.107.106.193:8848
+  redis:
+    host: 49.232.199.44
+    port: 6379
+    password: 12345
 
 zuul:
   routes:
     basicInformation:
+      sensitiveHeaders: '*'
     exceptionHandler:
+      sensitiveHeaders: '*'
     imageManager:
+      sensitiveHeaders: '*'
     order:
+      sensitiveHeaders: '*'
     userPermission:
+      sensitiveHeaders: '*'
     wallet:
+      sensitiveHeaders: '*'

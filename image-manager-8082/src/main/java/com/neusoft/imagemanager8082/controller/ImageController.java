@@ -89,13 +89,16 @@ public class ImageController extends BaseController {
         ImageVerificationCode ivc = new ImageVerificationCode();     //用我们的验证码类，生成验证码类对象
         BufferedImage image = ivc.getImage();  //获取验证码
         request.getSession().setAttribute("verifyCode", ivc.getText()); //将验证码的文本存在session中
+        String sessionId = request.getSession().getId();
+        System.out.println(sessionId);
         ivc.output(image, response.getOutputStream());//将验证码图片响应给客户端
     }
 
     @PostMapping("getVerifyCodeNumber")
     public BaseModelJson<String> getVerifyCodeNumber(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("utf-8");
-        System.out.println(request.getSession().getAttributeNames());
+        String sessionId = request.getSession().getId();
+        System.out.println(sessionId);
         String session_vcode=(String) request.getSession().getAttribute("verifyCode");    //从session中获取真正的验证码
         System.out.println(session_vcode);
         BaseModelJson<String> result = new BaseModelJson<>();
