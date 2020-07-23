@@ -50,7 +50,7 @@ public class ImageController extends BaseController {
             BaseModelJson<Image> result = new BaseModelJson<>();
             Image image = new Image();
             System.out.println(environment.getProperty("local.server.port"));
-            String url = "http://localhost:" + environment.getProperty("local.server.port") + "/File/files/" + filename;
+            String url = "http://49.232.199.44:" + environment.getProperty("local.server.port") + "/File/files/" + filename;
 //            System.out.println(url);
             image.setUri(url);
             int j = imageService.insert(image);

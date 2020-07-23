@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springgateway-8089" />
         <module name="wallet-8086" />
         <module name="image-manager-8082" />
         <module name="order-8085" />
@@ -23,6 +24,7 @@
       <module name="exception-handler-8081" options="-parameters" />
       <module name="image-manager-8082" options="-parameters" />
       <module name="order-8085" options="-parameters" />
+      <module name="springgateway-8089" options="-parameters" />
       <module name="user-permission-8083" options="-parameters" />
       <module name="wallet-8086" options="-parameters" />
       <module name="zuul-8087" options="-parameters" />
